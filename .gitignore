@@ -1,0 +1,7 @@
+build/
+bash_*_results*/
+bash_*_dpu_counts*/
+*.log
+plot/*.txt
+run-backup/
+.vscode/
