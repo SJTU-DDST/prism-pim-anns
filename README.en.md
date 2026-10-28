@@ -86,6 +86,7 @@ The project uses the system UPMEM SDK installed under `/usr`, including the DPU 
    ```
 
 3. On our UPMEM server, the CPU defaults to the `powersave` governor after each reboot. Check the current governor with `cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor` and switch to performance mode with `echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`.
+4. Since CPU clustering is slow, the Python script `./host/data/cluster_faiss_gpu.py` provides GPU-based clustering. When the dataset exceeds the available GPU memory, it can be loaded onto the GPU in batches for clustering.
 
 ### Parameter Locations
 

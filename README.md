@@ -57,6 +57,7 @@ cmake --build build -j
 ./build/host_app
 ```
 3. 在我们的 UPMEM 服务器上，每次它重启后，默认的CPU为省电模式（powersave），可通过命令`cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`查看电源模式，并通过`echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`来修改到性能模式。
+4. 由于使用CPU聚类很慢，因此编写了一个使用GPU进行聚类的python脚本 `./host/data/cluster_faiss_gpu.py` 。在显存不足时，可以将数据集分批放入GPU中进行聚类。
 
 
 ## 代码参数位置
